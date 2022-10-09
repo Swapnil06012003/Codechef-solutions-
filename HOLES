@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;  cin>>t;
+    while(t--){
+        string s;   cin>>s;
+        int holes=0;
+        for(int i=0;i<s.size();i++){
+            if(s[i]=='B')   holes=holes+2;
+            else if(s[i]=='A' || s[i]=='D' || s[i]=='O' || s[i]=='P' || s[i]=='Q' || s[i]=='R') holes++;
+        }
+        cout<<holes<<endl;
+    }
+    return 0;
+}
