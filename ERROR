@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;  cin>>t;
+    while(t--){
+        string bi;  cin>>bi;
+        string req1="010",req2="101";
+        int pos=0,flag=0;
+        int index;
+        while((index=bi.find(req1,pos)) !=string::npos){
+            flag=1;
+            cout<<"Good"<<endl;
+            pos=index+1;
+            break;
+        }
+        if(flag==0){
+            pos=0;
+            int index1;
+            while((index1=bi.find(req2,pos))!=string::npos){
+                flag=1;
+                cout<<"Good"<<endl;
+                pos=index+1;
+                break;
+            }
+        }
+        
+        if(flag==0) cout<<"Bad"<<endl;
+        
+    }
+    return 0;
+}
