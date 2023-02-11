@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int tc; cin >> tc;
+	while(tc--) {
+	    string s; cin >> s;
+	    bool a_range = false;
+	    bool b_range = false;
+	    int temp = 0, a = 0, b = 0;
+	    for(char x: s) {
+	        if(x == 'A') {
+	            if(a_range) {a+= temp;}
+	            a+= 1;
+	            temp = 0;
+	            b_range = false;
+	            a_range = true;
+	        }
+	        else if(x == 'B') {
+	            if(b_range) {b+= temp;}
+	            b+= 1;
+	            temp = 0;
+	            b_range = true;
+	            a_range = false;
+	        }
+	        else{temp++;}
+	    }
+	    cout << a << " " << b << endl;
+	}
+	return 0;
+}
