@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;  cin>>t;
+    while(t--){
+        int n,k; cin>>n>>k;
+        int arr[n]; for(int i=0;i<n;i++)    cin>>arr[i];
+        int vote[n]={0},ans=0;
+        for(int i=0;i<n;i++){
+          vote[arr[i]-1]++;
+        }
+        for(int i=0;i<n;i++)    if(vote[i]>=k && arr[i]!=i+1)  ans++;
+        cout<<ans<<endl;}
+    return 0;
+}
