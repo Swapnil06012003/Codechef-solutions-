@@ -1,0 +1,35 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t ;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    int realAns = 0 ;
+	    int arrival[n] ;
+	    int departure[n] ;
+	    for(int i = 0 ;i<n;i++){
+	        cin>>arrival[i] ;
+	    }
+	    for(int i=0;i<n;i++){
+	        cin>>departure[i] ;
+	    }
+	   vector<int>ansarray(1000,0) ;
+	   for(int i=0;i<n;i++){
+	       for(int j=arrival[i] ; j < departure[i] ;j++){
+	           ansarray[j]++ ;
+	         //  realAns=max(realAns,ansarray[j]) ;
+	       }
+	   }
+	   for(int i=0;i<1000 ;i++){
+	       realAns=max(realAns,ansarray[i]) ;
+	   }
+	 
+	   cout << realAns << endl ;
+	}
+	return 0;
+}
