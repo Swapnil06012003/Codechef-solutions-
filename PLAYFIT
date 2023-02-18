@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;  cin>>t;
+    while(t--){
+        int n;  cin>>n;
+        int arr[n],diff=0;
+        for(int i=0;i<n;i++)    cin>>arr[i];
+        int c_min=arr[0];
+        for(int i=1;i<n;i++){
+            if(diff<arr[i]-c_min)   diff=arr[i]-c_min;
+            else if(c_min>arr[i])   c_min=arr[i];
+        }
+        if(diff>0)  cout<<diff<<endl;
+        else    cout<<"UNFIT"<<endl;
+    }
+    return 0;
+}
