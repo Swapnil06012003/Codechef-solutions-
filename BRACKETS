@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+int max(int a,int b){
+    if(a>b) return a;
+    return b;
+}
+int main(){
+    int t;  cin>>t;
+    while(t--){
+        string s;   cin>>s;
+        int bl=0,l=0;
+        for(int i=0;i<s.size();i++){
+            if(s[i]=='(')   l++;
+            else l--;
+            bl=max(bl,l);}
+        for(int i=0;i<bl;i++)    cout<<"("; 
+        for(int i=0;i<bl;i++)    cout<<")";
+        cout<<endl;
+    }
+    return 0;
+}
