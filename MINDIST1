@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int T, N;
+	cin>>T;
+	string A = "";
+	while(T > 0){
+	    cin>>N;
+	    cin>>A;
+	    
+        int d = 0;
+        
+        if( A.find("11") != string::npos ){ 
+            cout<<1<<endl;
+        }
+        else {
+        
+            for(int i = 0; i <= N-3; i++){
+                string sA = A.substr(i, 3); 
+                if( sA == "110" or sA == "011" or sA == "111"){ 
+                    d = 1;
+                    break;
+                }
+                else if(sA == "101"){ 
+                    d = 2;
+                    i++;
+                }
+                else if(sA == "100") { 
+                    A.replace(i, 3, "001"); 
+                }
+                else if(sA == "000"){ 
+                    i+=2;
+                }
+                else if(sA == "001"){ 
+                    i++;
+                }
+            }
+            
+            cout<<d<<endl;
+        }
+        
+	    T--;
+	}
+	return 0;
+}
