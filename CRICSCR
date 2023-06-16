@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;  cin>>n;
+    int run[n+1],wik[n+1],flag=0;
+    run[0]=0;
+    wik[0]=0;
+    for(int i=0;i<n;i++){
+        cin>>run[i+1]>>wik[i+1];
+        if(run[i+1]<run[i] || wik[i+1]>10 || wik[i+1]<wik[i] || (wik[i+1]==10 && i!=n-1)) {flag=1;    break;}
+    }
+    
+    if(flag==1)  cout<<"NO"<<endl;
+    else cout<<"YES"<<endl;
+    return 0;
+}
