@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{   
+    int t;  cin>>t;
+    while(t--){
+	    int n;  cin>>n;
+	    if(n%2==0){
+	        n=n/10;
+	        int flag=1;
+	        while(n>0){
+	            if(n%2==0)  flag=0;
+	            n=n/10;
+	        }
+	        if(flag==0) cout<<"YES"<<endl;
+	        else cout<<"NO"<<endl;
+	    }
+	    else {
+	        n=n/10;
+	        int flag=1;
+	        while(n>0){
+	            if(n%2!=0)  flag=0;
+	            n=n/10;
+	        }
+	        if(flag==0) cout<<"YES"<<endl;
+	        else cout<<"NO"<<endl;
+	    }
+    }
+	return 0;
+}
+
