@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin >> t;
+	while(t--)
+	{
+	    long long n;
+	    cin >> n;
+	    long long x=0;
+	    if(n<250000)
+	    {
+	        x = 0;
+	    }
+	    else
+	    {
+	        if(n<500000)
+	        {
+	            x += (n-250000)/20;
+	        }
+	        else if(n<750000)
+	        {
+	            x += 12500;
+	            x += (n-500000)/10;
+	        }
+	        else if(n<1000000)
+	        {
+	            x += 12500;
+	            x += 25000;
+	            x += 15*(n-750000)/100;
+	        }
+	        else if(n<1250000)
+	        {
+	            x += 12500;
+	            x += 25000;
+	            x += 37500;
+	            x += (n-1000000)/5;
+	        }
+	        else if(n<1500000)
+	        {
+	            x += 12500;
+	            x += 25000;
+	            x += 37500;
+	            x += 50000;
+	            x += (n-1250000)/4;
+	        }
+	        else
+	        {
+	            x += 12500;
+	            x += 25000;
+	            x += 37500;
+	            x += 50000;
+	            x += 62500;
+	            x += 3*(n-1500000)/10;
+	        }
+	    }
+	    n = n-x;
+	    cout << n << endl;
+	}
+	return 0;
+}
