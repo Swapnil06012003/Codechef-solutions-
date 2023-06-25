@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+#define ll long long 
+using namespace std;
+
+int main() {
+	int t;
+	cin >> t;
+	while(t--){
+	    long long mg,my, mr;
+	    long long og,oy,orr;
+	    long long pg,py,pr;
+	    cin>>mg>>my>>mr>>og>>oy>>orr>>pg>>py>>pr;
+	    
+	    long long int ans1=max(mg+og+pg,mr+orr+pr),ans2=max(mg+my+mr,og+oy+orr);
+	    ans1=max(ans1,my+oy+py);
+	    ans2=max(ans2,pg+py+pr);
+	    long long int ans=max(ans1,ans2);
+	    if(ans%2==0 && ans)
+	        ans-=1;
+	        cout<<ans<<endl;
+	}
+	return 0;
+}
