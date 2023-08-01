@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;  cin>>t;
+    while(t--){
+        int n,k;  cin>>n>>k;
+        int arr[n];
+        for(int i=0;i<n;i++)    cin>>arr[i];
+        sort(arr,arr+n);
+        double avg=0;
+        for(int i=k;i<n-k;i++)  avg+=double(arr[i]);
+        avg/=n-(2*k);
+        cout<<fixed<<setprecision(6)<<avg<<endl;
+    }
+    return 0;
+}
