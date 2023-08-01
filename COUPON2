@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;  cin>>t;
+    while(t--){
+        int d,c;    cin>>d>>c;
+        int a1,a2,a3;   cin>>a1>>a2>>a3;
+        int b1,b2,b3;   cin>>b1>>b2>>b3;
+        
+        int sd1=a1+a2+a3+d;
+        int sd2=b1+b2+b3+d;
+        
+        int tswhc=sd1+sd2;
+        int tswc=0;
+        
+        if(sd1-d>=150)    tswc+=sd1-d;
+        else tswc+=sd1;
+        
+        if(sd2-d>=150)    tswc+=sd2-d;
+        else    tswc+=sd2;
+        
+        tswc+=c;
+        
+        if(tswc<tswhc)  cout<<"YES"<<endl;
+        else    cout<<"NO"<<endl;
+    }
+    return 0;
+}
