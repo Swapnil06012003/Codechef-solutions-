@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int t;  cin>>t;
+    while(t--){
+        long long  n;  cin>>n;
+        long long a=1,b=0,c=0;
+        long long counter=0;
+        for(int i=1;i<n;i++){
+            counter++;
+            if(counter==2)    {b=a;   a=0;}
+            if(counter==10)  {c=b;   b=0;}
+            if(counter==26)   {a=2*c;   c=0; counter=0;}
+        }
+        
+        cout<<a<<" "<<b<<" "<<c<<endl;
+    }
+    return 0;
+}
