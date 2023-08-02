@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;  cin>>t;
+    while(t--){
+        int n;  cin>>n;
+        int arr[n];     map<int,int>m;
+        int agent=0;
+        for(int i=0;i<n;i++){
+            cin>>arr[i];
+            if(i==0)    m[arr[i]]++;
+            if(arr[i]==arr[i-1] && i>=1)    (agent==1)?agent=0:agent=1;
+            if(arr[i]!=arr[i-1] && i>=1)    agent=0;
+            if ( agent==0   && i>=1)  m[arr[i]]++;
+        }
+        int max=-1;
+        for(auto it: m) if(max<it.second)   max=it.second;
+        for(auto it: m) if(max==it.second)  {cout<<it.first<<endl;  break;}
+        //for(auto it: m) cout<<it.first<<"->"<<it.second<<endl;
+    }
+    return 0;
+}
